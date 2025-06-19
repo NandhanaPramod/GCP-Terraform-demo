@@ -1,0 +1,18 @@
+project_id      = "your-project-id"
+org_id          = "your-org-id"
+billing_account = "XXXXXX-XXXXXX-XXXXXX"  # Replace with your billing account ID
+region          = "us-central1"
+parent_folder   = "your-parent-folder-id"
+environment     = "dev"
+
+network_name    = "vpc-network"
+subnet_name     = "subnet"
+subnet_cidr     = "10.0.0.0/24"
+
+enable_flow_logs  = true
+enable_audit_logs = true
+
+service_account_roles = [
+  "roles/viewer",
+  "roles/storage.objectViewer"
+] 

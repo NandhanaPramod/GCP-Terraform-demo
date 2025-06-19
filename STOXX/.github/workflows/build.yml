@@ -9,13 +9,10 @@ jobs:
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: demo-app
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -27,16 +24,10 @@ jobs:
       - name: Run tests with coverage
         run: |
           pytest --cov=. --cov-report=xml --cov-report=html
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar-${{ hashFiles('../sonar-project.properties') }}-v4
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         with:
           args: >
-            -Dsonar.projectBaseDir=.
             -Dsonar.projectKey=NandhanaPramod_gcp-demo-project
             -Dsonar.organization=nandhanapramod
         env:

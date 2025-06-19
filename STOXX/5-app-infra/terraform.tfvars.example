@@ -1,0 +1,12 @@
+# Example configuration for app-infra module
+project_id = "your-project-id"
+region     = "us-central1"
+
+# Cloud Run Configuration
+container_image = "nandhanas/python-website:v1.3-green"
+container_port  = 8080
+cpu_limit       = "1000m"    # 1 CPU
+memory_limit    = "512Mi"    # 512 MB RAM
+
+# Security
+allow_unauthenticated = false  # Set to true if you want public access 

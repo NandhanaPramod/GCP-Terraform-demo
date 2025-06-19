@@ -1,0 +1,5 @@
+project_id      = "your-project-id"
+org_id          = "your-org-id"
+billing_account = "your-billing-account-id"
+region          = "us-central1"
+environment     = "dev" 
