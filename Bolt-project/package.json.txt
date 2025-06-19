@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "test": "mocha '**/*.spec.js' --reporter mocha-junit-reporter --reporter-options mochaFile=junit.xml"
-  },
-  "devDependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^10.2.0",
-    "mocha-junit-reporter": "^2.2.0"
-  }
